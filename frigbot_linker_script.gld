@@ -49,7 +49,7 @@ MEMORY
   reset          : ORIGIN = 0x0,           LENGTH = 0x4
   ivt            : ORIGIN = 0x4,           LENGTH = 0xFC
 
-  program (xr)   : ORIGIN = 0x400,         LENGTH = 0x800
+  program (xr)   : ORIGIN = 0x200,         LENGTH = 0x400
   
   CONFIG3        : ORIGIN = 0x2ABFA,       LENGTH = 0x2
   CONFIG2        : ORIGIN = 0x2ABFC,       LENGTH = 0x2
@@ -64,7 +64,7 @@ __CONFIG2 = 0x2ABFC;
 __CONFIG1 = 0x2ABFE;
 
 __IVT_BASE  = 0x4;
-__CODE_BASE = 0x400;
+__CODE_BASE = 0x200;
 
 __DATA_BASE = 0x802;
 __DATA_LENGTH = 0x4000;

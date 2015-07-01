@@ -31,23 +31,27 @@ uint16_t frigbot_status_flags __attribute__((space(data),address(0x800)));
 /* Main Program                                                               */
 /******************************************************************************/
 
-int16_t main(void)
+int main(void)
 {
-
     /* Configure the oscillator for the device */
-    ConfigureOscillator();
+    //ConfigureOscillator();
 
     /* Initialize IO ports and peripherals */
     InitApp();
 
-    if (frigbot_status_flags & 0x0001) {
+    if (frigbot_status_flags & 0x0001) 
+    {
         /* Read hexfile program description at 0x2C00 and write this over
            the top of program 1, beginning at C00. */
         /* Write new program over old. */
         frigbot_status_flags = 0;       // Clear new firmware flag
-    } else {
-        /* Continue to program location */
-        asm("goto 0xC00");
     }
+    
+    /* Switch to alternate interrupt table for the main program */
+    _ALTIVT = 1;
+    /* Continue to program location */
+    asm("goto 0xC00");
   
+    return 0;
+    
 }
