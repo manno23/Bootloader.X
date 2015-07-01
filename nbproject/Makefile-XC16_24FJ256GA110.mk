@@ -189,13 +189,13 @@ dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OB
 	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf     -Wl,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem$(MP_EXTRA_LD_POST) 
 	
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   frigbot_linker_script.gld ../Blinky1.X/dist/XC16_24FJ256GA110/production/Blinky1.X.production.hex
+dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   frigbot_linker_script.gld ../Blinky1.X/dist/XC16_24FJ256GA110_Main/production/Blinky1.X.production.hex
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
 	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -Wl,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem$(MP_EXTRA_LD_POST) 
 	${MP_CC_DIR}/xc16-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} -a  -omf=elf  
 	
 	@echo "Creating unified hex file"
-	@"/opt/microchip/mplabx/v3.05/mplab_ide/mplab_ide/modules/../../bin/hexmate" --edf="/opt/microchip/mplabx/v3.05/mplab_ide/mplab_ide/modules/../../dat/en_msgs.txt" -break=557F0  dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.hex ../Blinky1.X/dist/XC16_24FJ256GA110/production/Blinky1.X.production.hex -odist/${CND_CONF}/production/Bootloader.X.production.unified.hex
+	@"/opt/microchip/mplabx/v3.05/mplab_ide/mplab_ide/modules/../../bin/hexmate" --edf="/opt/microchip/mplabx/v3.05/mplab_ide/mplab_ide/modules/../../dat/en_msgs.txt" -break=557F0  dist/${CND_CONF}/${IMAGE_TYPE}/Bootloader.X.${IMAGE_TYPE}.hex ../Blinky1.X/dist/XC16_24FJ256GA110_Main/production/Blinky1.X.production.hex -odist/${CND_CONF}/production/Bootloader.X.production.unified.hex
 
 endif
 
@@ -203,15 +203,15 @@ endif
 # Subprojects
 .build-subprojects:
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-	cd ../Blinky1.X && ${MAKE}  -f Makefile CONF=XC16_24FJ256GA110 TYPE_IMAGE=DEBUG_RUN
+	cd ../Blinky1.X && ${MAKE}  -f Makefile CONF=XC16_24FJ256GA110_Main TYPE_IMAGE=DEBUG_RUN
 else
-	cd ../Blinky1.X && ${MAKE}  -f Makefile CONF=XC16_24FJ256GA110
+	cd ../Blinky1.X && ${MAKE}  -f Makefile CONF=XC16_24FJ256GA110_Main
 endif
 
 
 # Subprojects
 .clean-subprojects:
-	cd ../Blinky1.X && rm -rf "build/XC16_24FJ256GA110" "dist/XC16_24FJ256GA110"
+	cd ../Blinky1.X && rm -rf "build/XC16_24FJ256GA110_Main" "dist/XC16_24FJ256GA110_Main"
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
