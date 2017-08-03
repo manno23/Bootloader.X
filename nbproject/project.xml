@@ -15,5 +15,8 @@
                 <make-dep-project>../Blinky1.X</make-dep-project>
             </make-dep-projects>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>circ</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>
